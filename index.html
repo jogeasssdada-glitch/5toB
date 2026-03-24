@@ -45,8 +45,46 @@
         }
 
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 3px; }
-        .btn { background-color: #ff0000; color: white; padding: 1rem 2rem; border: none; border-radius: 5px; font-size: 1rem; font-weight: bold; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-block; margin-top: 20px; }
+        
+        /* Botón con Efecto de Brillo */
+        .btn { 
+            background-color: #ff0000; 
+            color: white; 
+            padding: 1rem 2rem; 
+            border: none; 
+            border-radius: 5px; 
+            font-size: 1rem; 
+            font-weight: bold; 
+            cursor: pointer; 
+            text-decoration: none; 
+            transition: all 0.3s ease; 
+            display: inline-block; 
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
         .btn:hover { background-color: #fff; color: #ff0000; transform: scale(1.05); }
+
+        /* Animación de brillo para el botón de contacto */
+        .btn-glow::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 20%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: rotate(30deg);
+            transition: none;
+            animation: glow 3s infinite;
+        }
+
+        @keyframes glow {
+            0% { left: -60%; }
+            20% { left: 120%; }
+            100% { left: 120%; }
+        }
 
         /* Presentación */
         #presentacion {
@@ -159,7 +197,13 @@
     <section id="contacto" class="contact">
         <h2 class="section-title" data-reveal>Únete a la Experiencia</h2>
         <p data-reveal>¿Tienes dudas o quieres colaborar? Escríbenos.</p>
-        <a href="mailto:encarbjorge@gmail.com?subject=Consulta%20Web%205to%20B%20Informatica" class="btn" data-reveal>ENVIAR CORREO</a>
+        
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=encarbjorge@gmail.com&su=Consulta%20Web%205to%20B%20Informatica" 
+           target="_blank" 
+           class="btn btn-glow" 
+           data-reveal>
+           ENVIAR CORREO
+        </a>
     </section>
 
     <footer>
