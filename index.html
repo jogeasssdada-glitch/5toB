@@ -6,11 +6,9 @@
     <title>5to B | Informática</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <style>
-        /* Estilos Generales */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; background-color: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
 
-        /* Navegación */
         header {
             background-color: rgba(0, 0, 0, 0.9);
             padding: 1rem 2rem;
@@ -29,7 +27,6 @@
         nav a { color: #fff; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 0.9rem; text-transform: uppercase; transition: color 0.3s; }
         nav a:hover { color: #ff0000; }
 
-        /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -45,8 +42,6 @@
         }
 
         .hero h1 { font-size: 3.5rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 3px; }
-        
-        /* Botón con Efecto de Brillo */
         .btn { 
             background-color: #ff0000; 
             color: white; 
@@ -59,34 +54,10 @@
             text-decoration: none; 
             transition: all 0.3s ease; 
             display: inline-block; 
-            margin-top: 20px;
-            position: relative;
-            overflow: hidden;
+            margin-top: 20px; 
         }
-
         .btn:hover { background-color: #fff; color: #ff0000; transform: scale(1.05); }
 
-        /* Animación de brillo para el botón de contacto */
-        .btn-glow::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 20%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.4);
-            transform: rotate(30deg);
-            transition: none;
-            animation: glow 3s infinite;
-        }
-
-        @keyframes glow {
-            0% { left: -60%; }
-            20% { left: 120%; }
-            100% { left: 120%; }
-        }
-
-        /* Presentación */
         #presentacion {
             padding: 8rem 2rem;
             background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), 
@@ -97,7 +68,6 @@
 
         .section-title { font-size: 2.5rem; margin-bottom: 2rem; color: #ff0000; text-transform: uppercase; }
 
-        /* Ventas y Actividades */
         .ventas-section { padding: 6rem 2rem; background-color: #050505; position: relative; text-align: center; }
         .ventas-banner { font-size: 5rem; font-weight: 900; color: rgba(255, 0, 0, 0.05); position: absolute; top: 50px; left: 0; width: 100%; z-index: 1; pointer-events: none; text-transform: uppercase; }
         .info-container { position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; }
@@ -120,11 +90,9 @@
         .sale-info h3 { font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 1px; }
         .sale-info p { font-size: 0.9rem; color: #888; }
 
-        /* Animaciones */
         [data-reveal] { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         [data-reveal].active { opacity: 1; transform: translateY(0); }
 
-        /* Sección Contacto */
         .contact {
             padding: 6rem 2rem;
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), 
@@ -133,7 +101,6 @@
             text-align: center;
         }
 
-        /* Footer */
         footer { padding: 2rem; background: #000; border-top: 1px solid #222; text-align: center; font-size: 0.8rem; color: #666; }
 
         @media (max-width: 768px) { .hero h1 { font-size: 2.2rem; } .ventas-banner { font-size: 2.5rem; } }
@@ -198,9 +165,9 @@
         <h2 class="section-title" data-reveal>Únete a la Experiencia</h2>
         <p data-reveal>¿Tienes dudas o quieres colaborar? Escríbenos.</p>
         
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=encarbjorge@gmail.com&su=Consulta%20Web%205to%20B%20Informatica" 
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=encarbjorge@gmail.com&su=Contacto%20desde%20la%20Web%205to%20B" 
            target="_blank" 
-           class="btn btn-glow" 
+           class="btn" 
            data-reveal>
            ENVIAR CORREO
         </a>
