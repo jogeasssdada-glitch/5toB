@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5to B | Informática</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; background-color: #000; color: #fff; line-height: 1.6; overflow-x: hidden; }
@@ -89,8 +90,19 @@
         .sale-info h3 { font-size: 1.2rem; margin-bottom: 5px; letter-spacing: 1px; }
         .sale-info p { font-size: 0.9rem; color: #888; }
 
-        [data-reveal] { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        [data-reveal].active { opacity: 1; transform: translateY(0); }
+        .faq-section { padding: 6rem 2rem; background: #000; text-align: center; }
+        .faq-container { max-width: 800px; margin: 0 auto; text-align: left; }
+        .faq-item { background: #111; border: 1px solid #222; margin-bottom: 10px; border-radius: 5px; overflow: hidden; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: bold; transition: 0.3s; }
+        .faq-question:hover { background: #1a1a1a; color: #ff0000; }
+        .faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: all 0.4s ease; color: #aaa; background: #0a0a0a; }
+        .faq-item.active .faq-answer { padding: 20px; max-height: 200px; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: #ff0000; }
+
+        .qr-section { padding: 6rem 2rem; background: linear-gradient(45deg, #000, #1a0000); text-align: center; border-top: 1px solid #222; }
+        .qr-card { background: #fff; padding: 20px; display: inline-block; border-radius: 15px; box-shadow: 0 0 25px rgba(255,0,0,0.3); margin-top: 20px; }
+        .qr-card img { width: 200px; height: 200px; display: block; }
+        .qr-text { margin-top: 15px; color: #fff; font-size: 1.1rem; font-weight: bold; }
 
         .contact {
             padding: 6rem 2rem;
@@ -99,6 +111,32 @@
             background-size: cover;
             text-align: center;
         }
+
+        [data-reveal] { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        [data-reveal].active { opacity: 1; transform: translateY(0); }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.5);
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); background-color: #128c7e; }
 
         footer { padding: 2rem; background: #000; border-top: 1px solid #222; text-align: center; font-size: 0.8rem; color: #666; }
 
@@ -113,7 +151,7 @@
             <ul>
                 <li><a href="#presentacion">Inicio</a></li>
                 <li><a href="#actividades">Actividades</a></li>
-                <li><a href="#ventas">Ventas</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
@@ -128,7 +166,7 @@
     <section id="presentacion">
         <h2 class="section-title" data-reveal>¿Quiénes somos?</h2>
         <div class="about-content" data-reveal>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Somos el 5to B de Informática, un grupo de estudiantes apasionados por la tecnología,la innovación y la creatividad. Nuestra pre-promoción no solo es una etapa, es el inicio de algo grande. 💻 ⚡</p>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Somos el 5to B de Informática, un grupo de estudiantes apasionados por la tecnología, la innovación y la creatividad. Nuestra pre-promoción no solo es una etapa, es el inicio de algo grande. 💻 ⚡</p>
         </div>
     </section>
 
@@ -140,8 +178,6 @@
 
             <div id="ventas" style="margin-top: 80px;">
                 <h2 style="color:#ff0000; font-size: 2rem; font-weight: bold;">VENTAS</h2>
-                <p style="color: #888; margin-bottom: 20px;">Apoya nuestros proyectos y sé parte de esta experiencia.</p>
-                
                 <div class="sales-grid">
                     <div class="sale-card" data-reveal>
                         <div class="sale-img" style="background-image: url('https://saluddata.com/wp-content/uploads/2023/11/que-es-la-informatica.webp');"></div>
@@ -160,23 +196,73 @@
         </div>
     </section>
 
+    <section class="faq-section" id="faq">
+        <h2 class="section-title" data-reveal>Preguntas Frecuentes</h2>
+        <div class="faq-container" data-reveal>
+            <div class="faq-item">
+                <div class="faq-question">¿Cómo puedo comprar los productos? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Puedes contactarnos directamente por Instagram o a través del botón de WhatsApp. Hacemos entregas personales en la institución.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Para qué se usan los fondos recaudados? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">Todo lo recaudado es para financiar nuestras actividades de pre-promoción, eventos tecnológicos y nuestra futura graduación.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Tienen tallas disponibles para la ropa? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">¡Sí! Manejamos tallas S, M, L y XL en todas nuestras ediciones limitadas.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="qr-section">
+        <h2 class="section-title" data-reveal>Escanea el Estilo</h2>
+        <div data-reveal>
+            <p class="qr-text">Mira nuestro video exclusivo de la Pre-Promo</p>
+            <div class="qr-card">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.youtube.com/watch?v=eBlWwEtEYm8" alt="QR Code">
+            </div>
+            <br>
+            <a href="https://www.youtube.com/watch?v=eBlWwEtEYm8" target="_blank" class="btn" style="margin-top: 30px;">VER VIDEO DIRECTO</a>
+        </div>
+    </section>
+
     <section id="contacto" class="contact">
         <h2 class="section-title" data-reveal>Únete a la Experiencia</h2>
         <p data-reveal>¿Tienes dudas o quieres colaborar? Escríbenos.</p>
-        
-        <a href="mailto:encarbjorge@gmail.com?subject=Contacto%20desde%20la%20Web%205to%20B" 
-           onclick="enviarCorreo(event)"
-           class="btn" 
-           data-reveal>
-           ENVIAR CORREO
-        </a>
+        <a href="mailto:encarbjorge@gmail.com?subject=Contacto%20desde%20la%20Web%205to%20B" onclick="enviarCorreo(event)" class="btn" data-reveal>ENVIAR CORREO</a>
     </section>
+
+    <button onclick="abrirWhatsapp(event)" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </button>
 
     <footer>
         <p>&copy; 2026 5TO B INFORMÁTICA - THE WORLD IS YOURS.</p>
     </footer>
 
     <script>
+        // Función para WhatsApp con detección de dispositivo
+        function abrirWhatsapp(e) {
+            const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            const numero = "8493810262";
+            const mensaje = encodeURIComponent("¡Hola 5to B! Vengo de la página web.");
+
+            if (esMovil) {
+                window.open(`https://wa.me/${numero}?text=${mensaje}`, '_blank');
+            } else {
+                alert("⚠️ Esta opción de contacto directo solo está disponible para dispositivos móviles. Por favor, escríbenos por Instagram o correo desde tu computador.");
+            }
+        }
+
+        // Acordeón FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Correo dinámico
         function enviarCorreo(e) {
             const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             if (!esMovil) {
@@ -188,6 +274,7 @@
             }
         }
 
+        // Efectos de revelación al hacer scroll
         const reveals = document.querySelectorAll('[data-reveal]');
         const revealOnScroll = () => {
             reveals.forEach(el => {
@@ -198,6 +285,10 @@
             });
         };
         window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
+</body>
+</html>
         revealOnScroll();
     </script>
 </body>
