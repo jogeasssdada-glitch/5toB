@@ -81,7 +81,6 @@
             height: 380px; 
             background-size: cover; 
             background-position: center; 
-            filter: grayscale(0%); 
             transition: 0.5s ease; 
         }
         .sale-card:hover .sale-img { transform: scale(1.05); }
@@ -165,7 +164,7 @@
         <h2 class="section-title" data-reveal>Únete a la Experiencia</h2>
         <p data-reveal>¿Tienes dudas o quieres colaborar? Escríbenos.</p>
         
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=encarbjorge@gmail.com" 
+        <a href="mailto:encarbjorge@gmail.com?subject=Contacto%20desde%20la%20Web%205to%20B" 
            onclick="enviarCorreo(event)"
            class="btn" 
            data-reveal>
@@ -178,31 +177,33 @@
     </footer>
 
     <script>
-        // Función para asegurar que el correo se envíe en cualquier plataforma
+        // Lógica de contacto mejorada
         function enviarCorreo(e) {
             const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
             
             if (!esMovil) {
-                // En PC: Evitamos el comportamiento por defecto y abrimos Gmail Web
+                // En PC: Evitamos el mailto que suele fallar y forzamos Gmail Web
                 e.preventDefault();
                 const destinatario = "encarbjorge@gmail.com";
                 const asunto = encodeURIComponent("Contacto desde la Web 5to B");
                 const urlGmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${asunto}`;
                 window.open(urlGmail, '_blank');
             }
-            // En móvil: No hacemos preventDefault, permitiendo que mailto: abra la App
+            // En móvil: No hacemos nada, el navegador abrirá la app de Gmail automáticamente
         }
 
-        // Animaciones de scroll
+        // Animaciones de revelado al hacer scroll
         const reveals = document.querySelectorAll('[data-reveal]');
         const revealOnScroll = () => {
             reveals.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) el.classList.add('active');
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('active');
+                }
             });
         };
         window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
+        revealOnScroll(); // Ejecutar una vez al cargar
     </script>
 </body>
 </html>
