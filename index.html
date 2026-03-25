@@ -128,7 +128,7 @@
     <section id="presentacion">
         <h2 class="section-title" data-reveal>¿Quiénes somos?</h2>
         <div class="about-content" data-reveal>
-            <p>Somos la élite tecnológica del 5to B. Estudiantes de informática dedicados a marcar la diferencia a través del código, el diseño y la innovación constante.</p>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">Somos el 5to B de Informática, un grupo de estudiantes apasionados por la tecnología, la innovación y la creatividad. Nuestra pre-promoción no solo es una etapa, es el inicio de algo grande. 💻 ⚡</p>
         </div>
     </section>
 
@@ -140,12 +140,12 @@
 
             <div id="ventas" style="margin-top: 80px;">
                 <h2 style="color:#ff0000; font-size: 2rem; font-weight: bold;">VENTAS</h2>
-                <p style="color: #888; max-width: 600px; margin: 0 auto;">Nuestros proyectos y ventas estarán llenos de innovación. Apóyanos y sé parte de esta gran experiencia.</p>
+                <p style="color: #888; margin-bottom: 20px;">Apoya nuestros proyectos y sé parte de esta experiencia.</p>
                 
                 <div class="sales-grid">
                     <div class="sale-card" data-reveal>
                         <div class="sale-img" style="background-image: url('https://saluddata.com/wp-content/uploads/2023/11/que-es-la-informatica.webp');"></div>
-                        <div class="sale-info"><h3>SCARFACE ED.</h3><p>Próximamente disponible</p></div>
+                        <div class="sale-info"><h3>SCARFACE ED.</h3><p>Próximamente</p></div>
                     </div>
                     <div class="sale-card" data-reveal>
                         <div class="sale-img" style="background-image: url('https://salesystems.es/wp-content/uploads/2023/01/tecnologia-informatica-diferencias.jpg');"></div>
@@ -177,22 +177,17 @@
     </footer>
 
     <script>
-        // Lógica de contacto mejorada
         function enviarCorreo(e) {
             const esMovil = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            
             if (!esMovil) {
-                // En PC: Evitamos el mailto que suele fallar y forzamos Gmail Web
                 e.preventDefault();
                 const destinatario = "encarbjorge@gmail.com";
                 const asunto = encodeURIComponent("Contacto desde la Web 5to B");
                 const urlGmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${asunto}`;
                 window.open(urlGmail, '_blank');
             }
-            // En móvil: No hacemos nada, el navegador abrirá la app de Gmail automáticamente
         }
 
-        // Animaciones de revelado al hacer scroll
         const reveals = document.querySelectorAll('[data-reveal]');
         const revealOnScroll = () => {
             reveals.forEach(el => {
@@ -203,7 +198,7 @@
             });
         };
         window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Ejecutar una vez al cargar
+        revealOnScroll();
     </script>
 </body>
 </html>
